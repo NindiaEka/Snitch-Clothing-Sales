@@ -1,0 +1,44 @@
+===========================================
+PREFACE
+===========================================
+This program is aims to create tables and insert the dataset into a PostgreSQL database.
+
+===========================================
+URL DATASET
+===========================================
+Dataset URL: https://www.kaggle.com/datasets/nayakganesh007/snitch-clothing-sales/data
+
+===========================================
+Data Definition Language Syntax
+===========================================
+Defines the structure of the `table_m3`, specifying columns, data types, and constraints using `CREATE TABLE`.
+
+CREATE TABLE table_m3 (
+    Order_ID INT,                   - ID unik untuk setiap transaksi penjualan
+    Customer_Name VARCHAR(50),      - Nama pelanggan yang melakukan pembelian
+    Product_Category VARCHAR(50),   - Kategori produk pakaian
+    Product_Name VARCHAR(50),       - Nama spesifik produk yang dijual
+    Units_Sold FLOAT(10),           - Jumlah unit produk yang terjual
+    Unit_Price FLOAT(10),           - Harga per unit produk
+    "Discount_%" FLOAT(10),         - Persentase diskon yang diberikan pada transaksi
+    Sales_Amount FLOAT(10),         - Total pendapatan setelah diskon diterapkan
+    Order_Date VARCHAR(50),         - Tanggal transaksi dilakukan
+    City VARCHAR(50),               - Kota tempat transaksi terjadi
+    Segment VARCHAR(50),            - Segmen pasar pembeli (B2C atau B2B)
+    Profit FLOAT(10)                - Laba yang diperoleh dari transaksi
+);
+
+===========================================
+Data Manipulation Language Syntax
+===========================================
+Inserts data from a CSV file into the `table_m3` using `COPY`.
+
+COPY table_m3(Order_ID, Customer_Name, Product_Category, Product_Name, Units_Sold, 
+                    Unit_Price, "Discount_%", Sales_Amount, Order_Date, 
+                    City, Segment, Profit)
+FROM '/data/P2M3_Nindia_Ekasuci_data_raw.csv'
+WITH (
+    FORMAT csv,
+    HEADER true,
+    DELIMITER ','
+);

@@ -1,0 +1,61 @@
+Nama : Nindia Ekasuci Larasati
+Batch : HCK - 030
+
+Conceptual Problem - Berisi penjelasan mengenai pemahaman dasar mengenai proses yang telah dilakukan
+-----------------------------------------------------------------------------------------------
+
+1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+NoSQL (Not Only SQL) merupakan sistem basis data yang dirancang untuk menangani data dalam jumlah sangat besar, terutama data yang tidak terstruktur maupun semi-terstruktur. 
+Berbeda dengan basis data relasional tradisional yang menggunakan tabel dan skema tetap. NoSQL lebih sesuai digunakan pada data yang terus berkembang, bervariasi, dan membutuhkan kecepatan serta efisiensi dalam penyimpanan maupun pemrosesan.
+referensi : https://www.geeksforgeeks.org/dbms/introduction-to-nosql/
+
+2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+a. Beban kerja yang optimal
+- Data NoSQL : Basis data NoSQL didesain untuk sejumlah pola akses data yang menyertakan aplikasi latensi rendah. Basis data pencarian NoSQL didesain untuk analitik data semi terstruktur.
+- Data relasional : Basis data relasional didesain untuk aplikasi transaksional dan aplikasi pemrosesan transaksi online (OLTP) Basis data relasional juga bagus untuk pemrosesan analitik online (OLAP).   
+
+b. Model Data
+- Data NoSQL : Basis data NoSQL menyediakan berbagai model data, seperti nilai-kunci, dokumen, grafik, dan kolom, yang dioptimalkan untuk performa dan skala.
+- Data relasional : Model relasional menormalkan data menjadi tabel yang terdiri dari baris dan kolom. Skema secara ketat mendefinisikan tabel, baris, kolom, indeks, hubungan antara tabel, dan elemen basis data lain. 
+
+c. Performa
+- Data NoSQL : Performa umumnya merupakan fungsi dari ukuran klaster perangkat keras, latensi jaringan, dan aplikasi panggilan.
+- Data relasional : Performa umumnya tergantung pada subsistem disk. Pengoptimalan kueri, indeks, dan struktur tabel sering kali diperlukan untuk mencapai kinerja puncak.
+
+d. Skala
+- Data NoSQL : Basis data NoSQL biasanya dapat dipartisi. Hal ini karena pola akses dapat diskalakan ke luar menggunakan arsitektur terdistribusi untuk meningkatkan throughput yang memberikan performa yang konsisten pada skala yang nyaris tak terbatas.
+- Data relational : Basis data relasional biasanya dapat dinaikkan skalanya dengan meningkatkan kemampuan komputasi perangkat keras atau diskalakan ke luar dengan menambahkan replika untuk beban kerja hanya-baca.
+
+e. API
+- Data SQL : API berbasis objek memungkinkan developer aplikasi menyimpan dan mengambil struktur data dengan mudah. Kunci partisi memungkinkan aplikasi mencari pasangan nilai-kunci, set kolom, atau dokumen semiterstruktur yang berisi objek dan atribut aplikasi berseri.
+- Data relasional : Permintaan untuk menyimpan dan mengambil data dikomunikasikan menggunakan kueri yang sesuai dengan bahasa kueri terstruktur (SQL). Kueri ini diuraikan dan dijalankan oleh database relasional.
+
+referensi : https://aws.amazon.com/id/nosql/#:~:text=Perbedaan%20utama%20antara%20basis%20data%20relasional%20dan%20nonrelasional%20dijelaskan%20dalam%20tabel%20di%20bawah%20ini.
+
+3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+a. Apache Cassandra
+- Ketersediaan & Skalabilitas Tinggi: Cassandra menggunakan arsitektur “peer‑to‑peer” tanpa master node, sehingga setiap node punya peran yang setara. Ini memungkinkan sistem tetap berjalan meski ada node yang gagal, dan dapat diskalakan secara linear dengan menambah node baru.
+- Throughput Penulisan Cepat: Memanfaatkan penyimpanan berbasis LSM‑tree, Cassandra sangat efisien untuk beban kerja dengan penulisan tinggi.
+- Replikasi Multi‑Data Center: Mendukung replikasi asinkron ke beberapa data center, memperkuat toleransi kesalahan dan ketahanan data. (https://en.wikipedia.org/wiki/Apache_Cassandra)
+b. Amazon DynamoDB
+- Fully Managed: AWS mengatur operasional seperti patching, backup, dan patching infrastruktur. Pengguna tinggal fokus pada penggunaan saja
+- Performa Konsisten & Skala Otomatis: Mendukung throughput tinggi dan latensi rendah dengan kemampuan autoscaling serta replikasi penyimpanan otomatis
+- Arsitektur Partitioning & Leader Election: Data didistribusikan berdasarkan partition key, setiap partisi dikelola dengan mekanisme pemilihan leader melalui algoritma Paxos—menjamin penulisan konsisten dan penyimpanan efisien
+
+4. Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri !
+Apache Airflow adalah platform open-source untuk mengatur dan menjadwalkan alur kerja data. Misalnya, saat kita punya beberapa tugas (task) seperti proses ETL, Airflow membantu menjalankannya secara teratur, baik berurutan maupun paralel. 
+Airflow bekerja dengan konsep DAG (Directed Acyclic Graph), yaitu alur yang menunjukkan urutan task mana yang dijalankan lebih dulu dan mana yang bisa bersamaan. Semua ini ditulis dengan Python, sehingga mudah dipakai dan dihubungkan dengan tools data lainnya.
+ referensi : https://airflow.apache.org/docs/
+
+5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+Great Expectations adalah semacam alat/tools buat mengecek kualitas data. Jadi sebelum data dipakai buat analisis, laporan, atau dimasukin ke model machine learning, kita bisa pastiin dulu datanya bener dan sesuai aturan yang ada.
+
+6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+Batch Processing itu suatu teknik mengolah data dengan cara mengumpulikan banyak data terlebih dahulu, baru diproses sekaligus pada waktu tertentu.
+
+Contoh kasus penggunaan :
+- Proses ETL > data dari website, aplikasi, atau database dikumpulikan terlebih dahulu, kemudian diproses ke data warehouse.
+- Gaji bulanan > data absensi, lembur, dan potongan gaji dikumpulikan sebulan penuh, kemudian diproses sekaligus jadi slip gaji di akhir bulan.
+
+Tools : Airflow, AWS Batch, MongoDB
+
