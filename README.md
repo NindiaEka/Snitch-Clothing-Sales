@@ -1,4 +1,4 @@
-# SMART Forecasting untuk Mengurangi Overstock dan Stockout dalam Supply Chain: Studi Snitch Clothing Sales
+# Sales and Inventory Analytics Dashboard for Fashion Supply Chain: Snitch Clothing Sales Case Study
 
 ## Repository Outline
 Adapun file - file yang ada pada project kali ini adalah :
@@ -70,6 +70,7 @@ Library python yang digunakan :
 - [Christopher, M. (2016). Logistics & supply chain management (5th ed.). Harlow: Pearson Education Limited.](https://nibmehub.com/opac-service/pdf/read/Logistics%20and%20Supply%20Chain%20Management-%205th%20edition.pdf)
 
 - [Porter, M. E. (1985). Competitive advantage: Creating and sustaining superior performance. New York: Free Press.](https://www.hbs.edu/faculty/Pages/item.aspx?num=193)
+
 
 
 
